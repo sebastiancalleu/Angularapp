@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 // rutas
 
 import { app_routing } from "./app.routes";
 
+// servicios
+
+import { InformacionService } from "./services/informacion.service";
 
 // components
 import { AppRoutingModule } from './app-routing.module';
@@ -27,9 +31,12 @@ import { ItemComponent } from './components/item/item.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+	HttpClientModule,
 	app_routing
   ],
-  providers: [],
+  providers: [
+	  InformacionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
